@@ -1,43 +1,48 @@
-X-Ray Analyzer Application
-A Python-based medical imaging tool for bone segmentation, fracture detection, and X-ray enhancement
 
-https://img.shields.io/badge/Python-3.8%252B-blue
-https://img.shields.io/badge/OpenCV-4.5%252B-green
-https://img.shields.io/badge/Google_Colab-Compatible-orange
+# X-Ray Analyzer Application
 
-Features
-✅ Bone Segmentation: Color-coded watershed segmentation for bone structures
-✅ Fracture Detection: Identifies and classifies fractures (Transverse, Oblique, Comminuted)
-✅ Image Enhancement: CLAHE contrast adjustment and noise reduction
-✅ Interactive UI: Upload, process, and reset with Colab-native widgets
-✅ Real-Time Display: Matplotlib visualization of processed X-rays
+**A Python-based medical imaging tool for bone segmentation, fracture detection, and X-ray enhancement**
 
-How to Run in Google Colab
-Upload an X-Ray: Click the Upload X-Ray button (supports JPG/PNG)
-Enhance Image: Improve contrast with CLAHE
-Reduce Noise: Apply bilateral filtering for cleaner images
-Segment Bones: Highlight bones with color masks
-Detect Cracks: Identify fractures with contour analysis
+![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
+![OpenCV](https://img.shields.io/badge/OpenCV-4.5+-green?logo=opencv)
+![Colab](https://img.shields.io/badge/Google_Colab-Compatible-orange?logo=google-colab)
 
-python
-# Simply run the cell containing the XRayAnalyzer class
-xray_analyzer = XRayAnalyzer()
-Technical Stack
-Python Libraries: OpenCV, scikit-image, SciPy, Matplotlib
+---
 
-Algorithms:
-Watershed segmentation (skimage.segmentation)
-Canny edge detection (cv2.Canny)
-Adaptive thresholding (cv2.adaptiveThreshold)
-Colab Integration: ipywidgets for UI, google.colab.files for uploads
+## Features
+- **Bone Segmentation**: Color-coded watershed segmentation
+- **Fracture Detection**: Identifies fracture types (Transverse/Oblique/Comminuted)
+- **Image Enhancement**: CLAHE contrast + noise reduction
+- **Interactive UI**: Colab-native widget controls
 
-Output Examples
-Original	Enhanced	Bone Segmentation	Fracture Detection
-https://via.placeholder.com/150	https://via.placeholder.com/150	https://via.placeholder.com/150	https://via.placeholder.com/150
-(Replace placeholders with actual screenshot links from Colab)
+---
 
-Limitations
-⚠ Accuracy: Dependent on X-ray quality (85-90% for clear images)
-⚠ File Types: Supports only JPG/PNG (DICOM not included)
-⚠ Performance: Large images may process slower in Colab
+## How to Run
+1. Open in [Google Colab](#)
+2. Upload X-ray (JPG/PNG)
+3. Use processing buttons:
+   - Enhance Image
+   - Segment Bones  
+   - Detect Cracks
+
+```python
+xray_analyzer = XRayAnalyzer()  # Runs the interface
+
+## Technical Stack
+| Component       | Technology |
+|----------------|------------|
+| Image Processing | OpenCV, scikit-image |
+| UI Framework | ipywidgets |
+| Visualization | Matplotlib |
+
+
+
+
+
+## Limitations
+- Accuracy: ~85-90% on clear X-rays
+- File Support: JPG/PNG only
+- Performance: Slower on >5MB images
+
+
 
